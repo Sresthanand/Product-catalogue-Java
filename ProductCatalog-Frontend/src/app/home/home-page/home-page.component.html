@@ -1,0 +1,58 @@
+
+  <div class="topnav">
+    <span class="search-label">Search Product:</span>
+    <input type="text" placeholder="Product Name" [(ngModel)]="searchCriteria.productName">
+    <input type="text" placeholder="Product Brand" [(ngModel)]="searchCriteria.productBrand">
+    <input type="text" placeholder="Product Code" [(ngModel)]="searchCriteria.productCode">
+    <button class="btn" (click)="searchProducts()">Search</button>
+    <button class="btn" (click)="sortProductsByPrice()">Sort by Price</button>
+    <button class="btn" (click)="handleLogin()">Login</button>
+    <button class="btn" routerLink="register">Register</button>
+  </div>
+
+<!--   
+<div style="margin-top: 15px flex" align="center">
+  <button id="btn" routerLink="login">Login Page</button>
+ 
+</div> -->
+  
+  <div class="product-cards">
+    <div class="product-card" *ngFor="let product of products">
+      <img [src]="product.image" alt="Product Image" style="width: auto; height: 150px;">
+      <div class="product-details">
+        <p>Product Code: {{ product.productCode }}</p>
+        <p>Product Name: {{ product.productName }}</p>
+        <p>Product Brand: {{ product.productBrand }}</p>
+        <p>Product Price: {{ product.productPrice }}</p>
+      </div>
+      <div class="product-actions">
+        <button class="btn-view-price" (click)="viewPriceDetails(product.productCode)">View Price</button>
+        <button class="btn-view-details" (click)="viewProductDetails(product.productCode)">View Details</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal" *ngIf="selectedProduct">
+    <div class="modal-content">
+      <h2>Product Details</h2>
+      <p>Product Description: {{ selectedProduct?.productDesc }}</p>
+      <p>Product Color: {{ selectedProduct?.productColor }}</p>
+      <p>Product Gender: {{ selectedProduct?.productGender }}</p>
+      <p>Product Price: {{ selectedProduct?.productPrice }}</p>
+      <button class="btn-close" (click)="checkServicibility(selectedProduct.product.productCode)">Check Servicibility</button>
+      <button class="btn-close" (click)="closeModal()">Close</button>
+    </div>
+  </div>
+
+
+  <div class="modal" *ngIf="selectedPrice">
+    <div class="modal-content">
+      <h2>Product Details</h2>
+      <p>Product Brand: {{ selectedPrice }}</p>
+      <button class="btn-close" (click)="closeModal2()">Close</button>
+    </div>
+  </div>
+
+
+  

@@ -1,0 +1,38 @@
+
+
+<div class="product-cards">
+  <div class="product-card">
+    <img [src]="productDetails.image" alt="Product Image" style="width: auto; height: 200px;">
+    <div class="product-details">
+      <h2>Product Details</h2>
+      <p>Product Description: {{ productDetails?.productDesc }}</p>
+      <p>Product Color: {{ productDetails?.productColor }}</p>
+      <p>Product Gender: {{ productDetails?.productGender }}</p>
+    </div>
+  </div>
+</div>
+
+<label for="pincode"><b>Pincode Check</b></label>
+<input type="text" placeholder="Enter pincode to check" name="pincode" [(ngModel)]="pincode" required>
+<button (click)="checkServicibility(productDetails?.product?.productCode)">Check Servicibility</button>
+ <button (click)="checkServicibilityAndDelivery(productDetails?.product?.productCode)">Get Delivery</button>
+
+
+<!-- Add the modal component to your HTML -->
+<div class="modal" [ngClass]="{'show': showModal}">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Delivery Date</h5>
+      </div>
+      <div class="modal-body">
+        <p>{{ deliveryDate }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="hideModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

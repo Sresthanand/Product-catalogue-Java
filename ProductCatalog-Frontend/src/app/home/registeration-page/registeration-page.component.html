@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<h2>Registeration Form</h2>
+
+<form #adddetails="ngForm" (ngSubmit)="submit()">
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" [(ngModel)]="user.username" required>
+
+
+    <label for="FirstName"><b>FirstName</b></label>
+    <input type="text" placeholder="Enter FirstName" name="FirstName" required>
+
+    
+    <label for="LastName"><b>LastName</b></label>
+    <input type="text" placeholder="Enter LastName" name="LastName" required>
+
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="pass" [(ngModel)] = "user.pass" required>
+        
+    <button type="submit">Register</button>
+    <a href="login">Have an account already ? Login</a>
+  </div>
+</form>
+
+</body>
+</html>

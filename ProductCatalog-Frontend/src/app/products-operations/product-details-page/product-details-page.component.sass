@@ -1,0 +1,95 @@
+.product-cards
+  display: flex
+  flex-wrap: wrap
+
+.product-card
+  display: flex
+  flex-direction: row
+  align-items: flex-start
+  flex: 1
+  margin: 10px
+  border: 1px solid #ccc
+  padding: 10px
+
+  img
+    margin-right: 10px
+
+  .product-details
+    flex: 1
+
+label[for="pincode"]
+  display: block
+  font-weight: bold
+  margin-bottom:20px
+  margin-top:20px
+  font-size:40px
+
+input[type="text"][name="pincode"]
+  padding: 10px
+  border: 1px solid #ccc
+  border-radius: 4px
+  width: 200px
+  margin-bottom: 10px
+
+button
+  padding: 10px 20px
+  background-color: #007bff
+  color: #fff
+  border: none
+  border-radius: 4px
+  cursor: pointer
+  margin-right: 10px
+  margin-left:10px
+  transition: background-color 0.3s
+
+button:hover
+  background-color: #0056b3
+
+
+  label
+    margin-right: 10px
+
+  input[type="text"]
+    padding: 5px
+    border: 1px solid #ccc
+    border-radius: 4px
+
+  button
+    padding: 10px 20px
+    background-color: #007bff
+    color: #fff
+    border: none
+    border-radius: 4px
+    cursor: pointer
+    margin-left: 10px
+
+.modal
+  display: none
+  position: fixed
+  z-index: 1000
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  overflow: auto
+  background-color: rgba(0, 0, 0, 0.5)
+
+  &.show
+    display: block
+
+.modal-dialog
+  position: relative
+  margin: 10% auto
+  padding: 20px
+  max-width: 500px
+  background-color: #fff
+  border-radius: 5px
+
+.modal-title
+  margin: 0
+
+.modal-body
+  padding: 20px 0
+
+.modal-footer
+  text-align: right
